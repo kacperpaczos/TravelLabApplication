@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.content.Intent
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -13,57 +12,77 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.travellabapplication.ui.theme.TravelLabApplicationTheme
-import android.widget.Toast
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.ViewModelProvider
+import com.example.travellabapplication.viewmodels.TravelViewModel
+import com.example.travellabapplication.viewmodels.Travel
+import androidx.compose.runtime.getValue
 
 class MainActivity : ComponentActivity() {
+    private lateinit var travelViewModel: TravelViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        travelViewModel = ViewModelProvider(this).get(TravelViewModel::class.java)
         setContent {
             TravelLabApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ButtonList(modifier = Modifier.padding(innerPadding))
+                    TravelListScreen(viewModel = travelViewModel, modifier = Modifier.padding(innerPadding))
                 }
             }
         }
+
+        // Ustaw dane podróży
+        travelViewModel.setTravelData(
+            id = "1",
+            title = "Nazwa podróży",
+            description = "Opis podróży",
+            distanceKm = 100,
+            startLocation = "Początek podróży",
+            endLocation = "Koniec podróży",
+            rating = 4.5f
+        )
     }
 }
 
 @Composable
-fun ButtonList(modifier: Modifier = Modifier) {
+fun TravelListScreen(viewModel: TravelViewModel, modifier: Modifier = Modifier) {
+    val travelList: List<Travel> by viewModel.travelData.collectAsState(initial = emptyList())
+
     Column(modifier = modifier.fillMaxWidth()) {
-        val numberOfButtons = 5
-        val context = LocalContext.current
-        for (i in 1..numberOfButtons) {
-            Button(
-                onClick = {
-                    val intent = Intent(context, TravelDetails::class.java)
-                    intent.putExtra("buttonNumber", i)
-                    context.startActivity(intent)
-                },
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(text = "Przycisk $i")
-            }
+        travelList.forEach { trip ->
+            TravelItem(trip = trip)
         }
     }
 }
 
 @Composable
-fun showToast(message: String) {
-    Toast.makeText(LocalContext.current, message, Toast.LENGTH_SHORT).show()
+fun TravelItem(trip: Travel) {
+    val context = LocalContext.current
+    Button(
+        onClick = {
+            val intent = Intent(context, TravelDetails::class.java).apply {
+                putExtra("travelId", trip.id)
+            }
+            context.startActivity(intent)
+        },
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Column {
+            Text(text = "Tytuł: ${trip.title}")
+            Text(text = "Opis: ${trip.description}")
+        }
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun ButtonListPreview() {
+fun TravelListScreenPreview() {
     TravelLabApplicationTheme {
-        ButtonList()
+        TravelListScreen(viewModel = TravelViewModel())
     }
 }
