@@ -9,12 +9,12 @@ class TravelDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_travel_details)
-        val buttonNumber = intent.getIntExtra("buttonNumber", -1) // Odbieranie numeru przycisku
+        val travelId = intent.getStringExtra("travelId") // Odbieranie ID podróży
 
         if (savedInstanceState == null) {
             val fragment = TravelDetailsFragment.newInstance()
             fragment.arguments = Bundle().apply {
-                putInt("buttonNumber", buttonNumber)
+                putString("travelId", travelId)
             }
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)

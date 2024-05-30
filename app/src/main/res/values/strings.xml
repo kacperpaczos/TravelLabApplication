@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TravelLabApplication</string>
+    <string name="menu_title">Witaj w TravelApp!</string>
+    <string name="button_pause">Wstrzymaj</string>
+    <string name="button_stop">Zatrzymaj</string>
+    <string name="button_start">Rozpocznij</string>
+    <string name="button_resume">Wznów</string>
 </resources>
