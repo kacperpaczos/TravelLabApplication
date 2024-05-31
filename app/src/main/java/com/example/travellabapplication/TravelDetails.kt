@@ -17,7 +17,7 @@ class TravelDetails : AppCompatActivity() {
                 putString("travelId", travelId)
             }
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, fragment)
+                .replace(R.id.fragment_container, fragment)
                 .commit()
         }
     }

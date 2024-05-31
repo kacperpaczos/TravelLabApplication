@@ -15,7 +15,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 
 import com.example.travellabapplication.R
-import com.example.travellabapplication.viewmodels.Travel
+import com.example.travellabapplication.models.Travel
 import com.example.travellabapplication.viewmodels.TravelViewModel
 
 class TravelDetailsFragment : Fragment() {
