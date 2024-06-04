@@ -3,7 +3,10 @@ package com.example.travellabapplication.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.travellabapplication.models.Travel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class TravelViewModel : ViewModel() {
     private val _travelData = MutableLiveData<List<Travel>>(emptyList())
@@ -12,12 +15,16 @@ class TravelViewModel : ViewModel() {
     var travelDetails: MutableLiveData<Travel?> = MutableLiveData()
 
     fun loadTravelDetails(travelId: String) {
-        val travelDetail = _travelData.value?.find { it.id == travelId }
-        travelDetails.postValue(travelDetail)
+        viewModelScope.launch(Dispatchers.IO) {
+            val travelDetail = _travelData.value?.find { it.id == travelId }
+            travelDetails.postValue(travelDetail)
+        }
     }
 
     fun setTravelData(travels: List<Travel>) {
-        _travelData.value = travels
+        viewModelScope.launch(Dispatchers.IO) {
+            _travelData.postValue(travels)
+        }
     }
 
     fun getTravelById(travelId: String): MutableLiveData<Travel?> {
