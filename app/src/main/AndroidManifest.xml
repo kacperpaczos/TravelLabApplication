@@ -13,7 +13,7 @@
         android:theme="@style/Theme.TravelLabApplication"
         tools:targetApi="31">
         <activity
-            android:name=".TravelDetails"
+            android:name=".TravelDetailsActivity"
             android:exported="false"
             android:theme="@style/AppTheme"/>
         <activity
