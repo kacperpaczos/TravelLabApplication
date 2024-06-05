@@ -15,7 +15,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 
 import com.example.travellabapplication.R
-import com.example.travellabapplication.models.Travel
 import com.example.travellabapplication.viewmodels.TravelViewModel
 
 class TravelDetailsFragment : Fragment() {
@@ -47,12 +46,12 @@ class TravelDetailsFragment : Fragment() {
             viewModel.loadTravelDetails(it)
         }
 
-        viewModel.travelDetails.observe(viewLifecycleOwner) { travel: Travel? ->
+        viewModel.travelDetails.observe(viewLifecycleOwner, Observer { travel ->
             travel?.let {
                 view.findViewById<TextView>(R.id.titleTextView).text = it.title
                 view.findViewById<TextView>(R.id.descriptionTextView).text = it.description
             }
-        }
+        })
 
         return view
     }

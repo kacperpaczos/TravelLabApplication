@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 import com.example.travellabapplication.models.Travel
 import com.example.travellabapplication.viewmodels.TravelViewModel
 
@@ -34,14 +36,11 @@ class TravelDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(TravelViewModel::class.java)
 
-        travelId?.let {
-            viewModel.getTravelById(it).observe(viewLifecycleOwner, { travel ->
-                travel?.let { updateUI(view, it) }
+        travelId?.let { id ->
+            viewModel.travelDetails.observe(viewLifecycleOwner, Observer<Travel?> { travel ->
+                travel?.let { travelDetails -> updateUI(view, travelDetails) }
             })
         }
-
-        val travelIdTextView: TextView = view.findViewById(R.id.textViewTravelId)
-        travelIdTextView.text = travelId
 
         val buttonBack: Button = view.findViewById(R.id.buttonBack)
         buttonBack.setOnClickListener {

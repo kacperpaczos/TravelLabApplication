@@ -1,7 +1,11 @@
 package com.example.travellabapplication.models
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "travels")
 data class Travel(
-    val id: String,
+    @PrimaryKey val id: String,
     val title: String,
     val description: String,
     val distanceKm: Float,

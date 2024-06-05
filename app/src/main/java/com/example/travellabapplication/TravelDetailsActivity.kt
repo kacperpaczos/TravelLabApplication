@@ -14,6 +14,7 @@ class TravelDetailsActivity : AppCompatActivity() {
             val travelId = intent.getStringExtra("travelId")
             supportFragmentManager.commit {
                 replace(R.id.fragment_container, TravelDetailsFragment.newInstance(travelId))
+                
             }
         }
     }
