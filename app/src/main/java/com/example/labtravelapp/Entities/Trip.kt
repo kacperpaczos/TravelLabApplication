@@ -12,5 +12,8 @@ data class Trip(
     val startLocation: String,
     val endLocation: String,
     val estimatedDistance: Double,
-    val estimatedTime: Double
+    val estimatedTime: Double,
+    val cost: Double,
+    val rating: Float,
+    val guide: String
 )

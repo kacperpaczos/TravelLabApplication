@@ -10,7 +10,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.activityViewModels
 import com.example.labtravelapp.R
+import com.example.labtravelapp.ui.detailtravelactivitydata.DetailTravelActivityDataViewModel
 
 class DetailTravelActivityStoperFragment : Fragment() {
     private lateinit var timerTextView: TextView
@@ -24,15 +26,7 @@ class DetailTravelActivityStoperFragment : Fragment() {
     private var running = false
     private var wasRunning = false
 
-    companion object {
-        fun newInstance(param1: String, param2: String) =
-            DetailTravelActivityStoperFragment().apply {
-                arguments = Bundle().apply {
-                    putString("param1", param1)
-                    putString("param2", param2)
-                }
-            }
-    }
+    private val viewModel: DetailTravelActivityDataViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -83,6 +77,10 @@ class DetailTravelActivityStoperFragment : Fragment() {
             // Add any additional logic for finishing the timer
         }
 
+        viewModel.trip.observe(viewLifecycleOwner) { trip ->
+            // Update UI with trip data
+        }
+
         runTimer()
         return rootView
     }
@@ -117,3 +115,4 @@ class DetailTravelActivityStoperFragment : Fragment() {
         }
     }
 }
+
