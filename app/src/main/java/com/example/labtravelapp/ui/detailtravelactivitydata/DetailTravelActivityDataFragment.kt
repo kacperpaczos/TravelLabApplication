@@ -46,7 +46,7 @@ class DetailTravelActivityDataFragment : Fragment() {
         // Znajdź RecyclerView i ustaw adapter
         recyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = GridLayoutManager(context, 2)
-        adapter = TripDataAdapter(requireContext(), viewModel.trip.value ?: Trip(
+        adapter = TripDataAdapter(requireContext(), Trip(
             id = 0,
             name = "",
             description = "",

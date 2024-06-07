@@ -11,13 +11,14 @@ import com.example.labtravelapp.Trip
 
 class TripDataAdapter(private val context: Context, var data: Trip) : RecyclerView.Adapter<TripDataAdapter.ViewHolder>() {
 
-    private val tripDetails = listOf(
-        "Name: ${data.name}",
-        "Description: ${data.description}",
-        "Cost: ${data.cost}",
-        "Rating: ${data.rating}",
-        "Guide: ${data.guide}"
-    )
+    private val tripDetails: List<String>
+        get() = listOf(
+            "Name: ${data.name}",
+            "Description: ${data.description}",
+            "Cost: ${data.cost}",
+            "Rating: ${data.rating}",
+            "Guide: ${data.guide}"
+        )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_trip_detail, parent, false)
