@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">LabTravelApp</string>
+    <string name="no_trips_text">Brak wycieczek w bazie danych</string>
+    <string name="fill_button_text">Uzupełnij</string>
+    <string name="exit_button_text">Wyjdź</string>
+    <string name="start_button_text">Start</string>
+    <string name="pause_button_text">Pauza</string>
+    <string name="resume_button_text">Wznów</string>
+    <string name="finish_button_text">Zakończ</string>
+    <string name="reset_button_text">Resetuj/Zatrzymaj</string>
+    <!-- TODO: Usuń lub zmień ten tekst zastępczy -->
+    <string name="hello_blank_fragment">Witaj pusty fragmencie</string>
+    <string name="back_button_text">Wstecz</string>
+    <string name="trip_name_text">Nazwa wycieczki</string>
+    <string name="trip_description_text">Opis wycieczki</string>
+    <string name="trip_cost_text">Koszt wycieczki</string>
+    <string name="trip_rating_text">Ocena wycieczki</string>
+    <string name="trip_guide_text">Przewodnik wycieczki</string>
+    <string name="details_button_text">Szczegóły</string>
+    <string name="trip_detail_text">Szczegóły wycieczki</string>
+</resources>
