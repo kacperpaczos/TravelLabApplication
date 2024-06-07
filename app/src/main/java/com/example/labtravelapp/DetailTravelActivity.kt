@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import com.example.labtravelapp.ui.detailtravelactivitydata.DetailTravelActivityDataFragment
 import com.example.labtravelapp.ui.detailtravelactivitystoper.DetailTravelActivityStoperFragment
-import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.room.Room
 import com.example.labtravelapp.ui.detailtravelactivitydata.DetailTravelActivityDataViewModel
@@ -25,6 +24,10 @@ class DetailTravelActivity : AppCompatActivity() {
             AppDatabase::class.java, "trips-database"
         ).build()
 
+        viewModel = ViewModelProvider(this).get(DetailTravelActivityDataViewModel::class.java)
+        viewModel.setDatabase(db)
+        viewModel.loadTrip(tripId)
+
         if (savedInstanceState == null) {
             val dataFragment = DetailTravelActivityDataFragment.newInstance(tripId)
             dataFragment.setDatabase(db)
@@ -33,10 +36,6 @@ class DetailTravelActivity : AppCompatActivity() {
                 .replace(R.id.container2, dataFragment)
                 .commitNow()
         }
-
-        viewModel = ViewModelProvider(this).get(DetailTravelActivityDataViewModel::class.java)
-        viewModel.setDatabase(db)
-        viewModel.loadTrip(tripId)
 
         val backButton: Button = findViewById(R.id.back_button)
         backButton.setOnClickListener {

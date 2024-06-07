@@ -7,6 +7,7 @@ plugins {
 android {
     namespace = "com.example.labtravelapp"
 
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.labtravelapp"
@@ -38,7 +39,6 @@ android {
     buildFeatures {
         viewBinding = true
     }
-    compileSdk = 34
 }
 
 dependencies {
