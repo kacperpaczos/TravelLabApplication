@@ -13,11 +13,11 @@ class TripDataAdapter(private val context: Context, var data: Trip) : RecyclerVi
 
     private val tripDetails: List<String>
         get() = listOf(
-            "Name: ${data.name}",
-            "Description: ${data.description}",
-            "Cost: ${data.cost}",
-            "Rating: ${data.rating}",
-            "Guide: ${data.guide}"
+            "<b>${context.getString(R.string.trip_name_text)}</b>: ${data.name}",
+            "<b>${context.getString(R.string.trip_description_text)}</b>: ${data.description}",
+            "<b>${context.getString(R.string.trip_cost_text)}</b>: ${data.cost}",
+            "<b>${context.getString(R.string.trip_rating_text)}</b>: ${data.rating}",
+            "<b>${context.getString(R.string.trip_guide_text)}</b>: ${data.guide}"
         )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,7 +26,7 @@ class TripDataAdapter(private val context: Context, var data: Trip) : RecyclerVi
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.detailTextView.text = tripDetails[position]
+        holder.detailTextView.text = android.text.Html.fromHtml(tripDetails[position])
     }
 
     override fun getItemCount(): Int = tripDetails.size

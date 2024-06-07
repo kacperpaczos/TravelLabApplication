@@ -9,7 +9,7 @@
         android:id="@+id/trip_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trip Name"
+        android:text="@string/trip_name_text"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -17,23 +17,23 @@
         android:id="@+id/trip_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trip Description" />
+        android:text="@string/trip_description_text" />
 
     <TextView
         android:id="@+id/trip_cost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trip Cost" />
+        android:text="@string/trip_cost_text" />
 
     <TextView
         android:id="@+id/trip_rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trip Rating" />
+        android:text="@string/trip_rating_text" />
 
     <TextView
         android:id="@+id/trip_guide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trip Guide" />
+        android:text="@string/trip_guide_text" />
 </LinearLayout>
