@@ -77,6 +77,7 @@ class DetailTravelActivityStoperFragment : Fragment() {
             finishButton.visibility = View.GONE
             resetButton.visibility = View.GONE
             timerTextView.setTextColor(ContextCompat.getColor(requireContext(), R.color.timer_default))
+            timerTextView.text = "00:00:00" // Ustawienie wartości po resecie na 00:00:00
         }
 
         finishButton.setOnClickListener {

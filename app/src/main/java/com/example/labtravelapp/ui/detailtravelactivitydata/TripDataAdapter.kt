@@ -9,29 +9,28 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.labtravelapp.R
 import com.example.labtravelapp.Trip
 
-class TripDataAdapter(private val context: Context, var data: List<Trip>) : RecyclerView.Adapter<TripDataAdapter.ViewHolder>() {
+class TripDataAdapter(private val context: Context, var data: Trip) : RecyclerView.Adapter<TripDataAdapter.ViewHolder>() {
+
+    private val tripDetails = listOf(
+        "Name: ${data.name}",
+        "Description: ${data.description}",
+        "Cost: ${data.cost}",
+        "Rating: ${data.rating}",
+        "Guide: ${data.guide}"
+    )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_trip, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_trip_detail, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val trip = data[position]
-        holder.nameTextView.text = trip.name
-        holder.descriptionTextView.text = trip.description
-        holder.costTextView.text = trip.cost.toString()
-        holder.ratingTextView.text = trip.rating.toString()
-        holder.guideTextView.text = trip.guide
+        holder.detailTextView.text = tripDetails[position]
     }
 
-    override fun getItemCount(): Int = data.size
+    override fun getItemCount(): Int = tripDetails.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val nameTextView: TextView = view.findViewById(R.id.trip_name)
-        val descriptionTextView: TextView = view.findViewById(R.id.trip_description)
-        val costTextView: TextView = view.findViewById(R.id.trip_cost)
-        val ratingTextView: TextView = view.findViewById(R.id.trip_rating)
-        val guideTextView: TextView = view.findViewById(R.id.trip_guide)
+        val detailTextView: TextView = view.findViewById(R.id.trip_detail)
     }
 }

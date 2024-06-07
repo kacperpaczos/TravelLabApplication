@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.labtravelapp.R
 import com.example.labtravelapp.AppDatabase
+import com.example.labtravelapp.Trip
 
 class DetailTravelActivityDataFragment : Fragment() {
 
@@ -45,11 +46,35 @@ class DetailTravelActivityDataFragment : Fragment() {
         // Znajdź RecyclerView i ustaw adapter
         recyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = GridLayoutManager(context, 2)
-        adapter = TripDataAdapter(requireContext(), listOfNotNull(viewModel.trip.value))
+        adapter = TripDataAdapter(requireContext(), viewModel.trip.value ?: Trip(
+            id = 0,
+            name = "",
+            description = "",
+            date = "",
+            startLocation = "",
+            endLocation = "",
+            estimatedDistance = 0.0,
+            estimatedTime = 0.0,
+            cost = 0.0,
+            rating = 0.0f,
+            guide = ""
+        ))
         recyclerView.adapter = adapter
 
         viewModel.trip.observe(viewLifecycleOwner, Observer { data ->
-            adapter.data = listOfNotNull(data)
+            adapter.data = data ?: Trip(
+                id = 0,
+                name = "",
+                description = "",
+                date = "",
+                startLocation = "",
+                endLocation = "",
+                estimatedDistance = 0.0,
+                estimatedTime = 0.0,
+                cost = 0.0,
+                rating = 0.0f,
+                guide = ""
+            )
             adapter.notifyDataSetChanged()
         })
 
