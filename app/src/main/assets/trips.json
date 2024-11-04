@@ -1,0 +1,74 @@
+{
+  "trips": [
+    {
+      "name": "Spacer po Starym Rynku",
+      "description": "Wycieczka po Starym Rynku w Poznaniu...",
+      "notes": "Pamiętać o zwiedzeniu ratusza i koziołków",
+      "date": "2023-10-01",
+      "startLocation": "Stary Rynek",
+      "endLocation": "Kawiarnia na Starym Rynku",
+      "estimatedDistance": 1.0,
+      "estimatedTime": 1.0,
+      "cost": 50.0,
+      "rating": 4.5,
+      "guide": "Anna Kowalska",
+      "status": "COMPLETED"
+    },
+    {
+      "name": "Ostrów Tumski i Warta",
+      "description": "Odwiedzimy Ostrów Tumski, najstarszą część Poznania. Zobaczymy Katedrę oraz Muzeum Archidiecezjalne. Wycieczka zakończy się spacerem nad Wartą.",
+      "notes": "Pamiętać o zwiedzeniu ratusza i koziołków",
+      "date": "2024-03-15",
+      "startLocation": "Ostrów Tumski",
+      "endLocation": "Nad Wartą",
+      "estimatedDistance": 2.5,
+      "estimatedTime": 2.0,
+      "cost": 70.0,
+      "rating": 4.0,
+      "guide": "Jan Nowak",
+      "status": "PLANNED"
+    },
+    {
+      "name": "Zamek Cesarski i Park Mickiewicza",
+      "description": "Zwiedzimy Zamek Cesarski oraz jego ogrody. Dowiemy się o historii zamku i jego roli w czasie II wojny światowej. Spacer zakończymy w pobliskim parku.",
+      "notes": "Pamiętać o zwiedzeniu ratusza i koziołków",
+      "date": "2024-03-10",
+      "startLocation": "Zamek Cesarski",
+      "endLocation": "Park Mickiewicza",
+      "estimatedDistance": 1.0,
+      "estimatedTime": 1.0,
+      "cost": 60.0,
+      "rating": 4.8,
+      "guide": "Katarzyna Wiśniewska",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "name": "Jeżyce i Park Sołacki",
+      "description": "Wycieczka po Jeżycach, jednej z najciekawszych dzielnic Poznania. Zobaczymy zabytkowe kamienice, odwiedzimy lokalne sklepy i kawiarnie. Spacer zakończymy w Parku Sołackim.",
+      "notes": "Pamiętać o zwiedzeniu ratusza i koziołków",
+      "date": "2023-09-04",
+      "startLocation": "Jeżyce",
+      "endLocation": "Park Sołacki",
+      "estimatedDistance": 3.0,
+      "estimatedTime": 2.0,
+      "cost": 80.0,
+      "rating": 4.2,
+      "guide": "Michał Lewandowski",
+      "status": "COMPLETED"
+    },
+    {
+      "name": "Nowe Zoo i Piknik",
+      "description": "Odwiedzimy Nowe Zoo w Poznaniu. Zobaczymy różnorodne gatunki zwierząt, a także weźmiemy udział w pokazie karmienia. Wycieczka zakończy się piknikiem na terenie zoo.",
+      "notes": "Pamiętać o zwiedzeniu ratusza i koziołków",
+      "date": "2024-05-05",
+      "startLocation": "Nowe Zoo",
+      "endLocation": "Nowe Zoo",
+      "estimatedDistance": 4.0,
+      "estimatedTime": 3.0,
+      "cost": 100.0,
+      "rating": 4.7,
+      "guide": "Ewa Zielińska",
+      "status": "PLANNED"
+    }
+  ]
+}

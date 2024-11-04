@@ -1,0 +1,13 @@
+<resources>
+    <!-- Usuń duplikat AppTheme stąd -->
+
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@layout/launch_screen_layout</item>
+        <!-- reszta definicji stylu -->
+    </style>
+
+    <style name="Animation.Activity.Launcher" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/anim</item>
+    </style>
+
+</resources>

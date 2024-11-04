@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.labtravelapp.R
-
 import com.example.labtravelapp.Trip
 import com.example.labtravelapp.databinding.FragmentTripListMainActivityBinding
 import com.google.android.material.button.MaterialButton

@@ -9,4 +9,13 @@
     <color name="timer_paused">#F44336</color>
     <color name="timer_reset">#FFEB3B</color>
     <color name="timer_default">#000000</color>
+    <color name="launch_screen_background">#F44336</color>
+    <color name="pink">#FFC0CB</color>
+    <color name="pink_light">#FFB6C1</color>
+    <color name="pink_dark">#FF69B4</color>
+    <color name="button_portrait">#2196F3</color>
+    <color name="button_landscape">#4CAF50</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
 </resources>

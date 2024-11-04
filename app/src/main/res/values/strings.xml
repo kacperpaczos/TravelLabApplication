@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LabTravelApp</string>
+    <string name="app_name">LabTravel App</string>
     <string name="no_trips_text">Brak wycieczek w bazie danych</string>
     <string name="fill_button_text">Uzupełnij</string>
     <string name="exit_button_text">Wyjdź</string>
@@ -18,4 +18,12 @@
     <string name="trip_guide_text">Przewodnik wycieczki</string>
     <string name="details_button_text">Szczegóły</string>
     <string name="trip_detail_text">Szczegóły wycieczki</string>
+  <string name="send_sms">Wyślij SMS z pozdrowieniami</string>
+    <string name="app_description">Aplikacja \'Lista-Szczegóły\' to idealne narzędzie do planowania i organizowania wycieczek! Umożliwia łatwe tworzenie list miejsc do odwiedzenia, zarządzanie szczegółami podróży i dodawanie notatek, dzięki czemu każdy wyjazd jest lepiej zorganizowany i bardziej przyjemny.</string>
+    <string name="go_to_tours">Przejdź do listy wycieczek</string>
+    <string name="completed_trips">Odbyte wycieczki</string>
+    <string name="ongoing_trips">Wycieczki w trakcie</string>
+    <string name="planned_trips">Zapanowane wycieczki</string>
+    <string name="trip_notes_text">Uwagi do trasy</string>
+    <string name="trip_header_image">Zdjęcie nagłówka wycieczki</string>
 </resources>
